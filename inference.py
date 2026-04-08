@@ -35,4 +35,7 @@ def run():
     print(f"[END] success=true steps={step} score={score:.2f}")
 
 if __name__ == "__main__":
-    run()
+    try:
+        run()
+    except Exception as e:
+        print(f"[END] success=false steps=0 score=0.0 error={str(e)}")
