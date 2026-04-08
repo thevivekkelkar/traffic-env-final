@@ -4,4 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-CMD python inference.py && tail -f /dev/null
+RUN pip install fastapi uvicorn
+
+CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "7860"]
